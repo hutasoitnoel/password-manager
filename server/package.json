@@ -11,10 +11,13 @@
     "mongoose": "^5.6.5"
   },
   "devDependencies": {
-    "dotenv": "^8.0.0"
+    "chai": "^4.2.0",
+    "chai-http": "^4.3.0",
+    "dotenv": "^8.0.0",
+    "mocha": "^6.2.0"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "NODE_ENV=test ./node_modules/mocha/bin/mocha --timeout 15000 --exit"
   },
   "keywords": [],
   "author": "",

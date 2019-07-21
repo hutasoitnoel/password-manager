@@ -18,7 +18,7 @@ class PasswordController {
         Password
             .findOneAndUpdate(
                 { _id: req.params.id },
-                { account, email, password, icon: `https://logo.clearbit.com/${account}.com` },
+                { account, email, password, icon: `https://logo.clearbit.com/${account}.com`, userId: req.decoded._id },
                 { new: true })
             .then(updated => {
                 res.status(200).json(updated)
@@ -32,7 +32,7 @@ class PasswordController {
         Password
             .findOneAndDelete({ _id: req.params.id })
             .then(deleted => {
-                res.status(203).json(deleted)
+                res.status(202).json(deleted)
             })
             .catch(err => {
                 res.status(500).json(err)
