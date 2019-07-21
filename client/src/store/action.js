@@ -8,7 +8,6 @@ export function getPasswords() {
         Axios
             .get(`${port}/password`, { headers: { token: localStorage.token } })
             .then(({ data }) => {
-                console.log(data)
                 dispatch({
                     type: "API_GET",
                     payload: data,
@@ -80,13 +79,10 @@ export function actionLogout(history) {
 }
 
 export function actionRegister(input) {
-    console.log(input)
     return dispatch => {
         Axios
             .post(`${port}/user/register`, input)
             .then(({ data }) => {
-                console.log("register success")
-                console.log(data)
                 Swal.fire(
                     `Congrats!`,
                     `You can now log in`,
@@ -94,7 +90,6 @@ export function actionRegister(input) {
                 )
             })
             .catch(err => {
-                console.log(err)
                 Swal.fire({
                     type: 'error',
                     title: 'Oh no!',
@@ -109,8 +104,6 @@ export function actionView(id) {
         Axios
             .get(`http://localhost:3000/password/${id}`, { headers: { token: localStorage.token } })
             .then(({ data }) => {
-                console.log("view berhasil")
-                console.log(data)
                 dispatch({
                     type: "API_GET",
                     payload: data,
@@ -129,7 +122,6 @@ export function actionCreate(input) {
         Axios
             .post(`${port}/password`, input, { headers: { token: localStorage.token } })
             .then(({ data }) => {
-                console.log(data)
                 dispatch({
                     type: "CREATE_PASSWORD",
                     payload: data,
@@ -173,7 +165,6 @@ export function actionDelete(id) {
                     Axios
                         .delete(`http://localhost:3000/password/${id}`, { headers: { token: localStorage.token } })
                         .then(({ data }) => {
-                            console.log("delete success")
                             dispatch({
                                 type: "DELETE_PASSWORD",
                                 payload: data,
