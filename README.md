@@ -1,5 +1,12 @@
 # password-manager
 
+ENV Contents:
+
+        PORT=3000
+        SECRET=xendit
+        NODE_ENV=development
+        
+
 ## User Routes
 ### GET
 1. GET /user/:id
