@@ -22,10 +22,10 @@ const mapDispatchToProps = {
 
 function Home(props) {
     useEffect(() => {
+        props.getPasswords()
+        props.newPassword()
         if (localStorage.token && !props.isLogin) {
-            props.getPasswords()
             props.persistLogin()
-            props.newPassword()
         }
     }, [props])
 

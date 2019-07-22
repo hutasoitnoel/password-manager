@@ -60,6 +60,7 @@ function Form(props) {
                                         onChange={e => setAccount(e.target.value)}
                                         style={{ width: "100%" }}
                                         required={true}
+                                        data-testid="editAccount"
                                     />
                                 </div>
                             </div>
@@ -74,6 +75,7 @@ function Form(props) {
                                         onChange={e => setEmail(e.target.value)}
                                         style={{ width: "100%" }}
                                         required={true}
+                                        data-testid="editEmail"
                                     />
                                 </div>
                             </div>
@@ -88,10 +90,14 @@ function Form(props) {
                                         onChange={e => setPassword(e.target.value)}
                                         style={{ width: "100%" }}
                                         required={true}
+                                        data-testid="editPassword"
                                     />
                                 </div>
                             </div>
-                            <button className="btn btn-info">Edit</button>
+                            <button 
+                            className="btn btn-info"
+                            data-testid="submitEdit"
+                            >Edit</button>
                         </form>
                     </div>
                 </div>
@@ -114,6 +120,7 @@ function Form(props) {
                                         onChange={e => setAccount(e.target.value)}
                                         style={{ width: "100%" }}
                                         required={true}
+                                        data-testid="createAccount"
                                     />
                                 </div>
                             </div>
@@ -128,6 +135,7 @@ function Form(props) {
                                         onChange={e => setEmail(e.target.value)}
                                         style={{ width: "100%" }}
                                         required={true}
+                                        data-testid="createEmail"
                                     />
                                 </div>
                             </div>
@@ -142,16 +150,21 @@ function Form(props) {
                                         onChange={e => setPassword(e.target.value)}
                                         style={{ width: "100%" }}
                                         required={true}
+                                        data-testid="createPassword"
                                     />
                                 </div>
                             </div>
-                            <button className="btn" style={{ color: "white", backgroundColor: "#3CAEA3" }}>Add</button>
+                            <button 
+                            className="btn" 
+                            style={{ color: "white", backgroundColor: "#3CAEA3" }}
+                            data-testid="submitCreate"
+                            >Add</button>
                         </form>
                     </div>
                 </div>
             }
 
-            <div className="card mt-3">
+            <div className="card my-3">
                 <div className="card-header" style={{ textAlign: "center", backgroundColor: "#3CAEA3", color: "white" }}>
                     Status
                 </div>

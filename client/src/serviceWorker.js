@@ -133,3 +133,5 @@ export function unregister() {
     });
   }
 }
+
+/* istanbul ignore file */

@@ -102,7 +102,7 @@ export function actionRegister(input) {
 export function actionView(id) {
     return dispatch => {
         Axios
-            .get(`http://localhost:3000/password/${id}`, { headers: { token: localStorage.token } })
+            .get(`${port}/password/${id}`, { headers: { token: localStorage.token } })
             .then(({ data }) => {
                 dispatch({
                     type: "API_GET",
@@ -163,7 +163,7 @@ export function actionDelete(id) {
             .then((result) => {
                 if (result.value) {
                     Axios
-                        .delete(`http://localhost:3000/password/${id}`, { headers: { token: localStorage.token } })
+                        .delete(`${port}/password/${id}`, { headers: { token: localStorage.token } })
                         .then(({ data }) => {
                             dispatch({
                                 type: "DELETE_PASSWORD",

@@ -30,18 +30,38 @@ export default function ({ password, index, viewPassword, deletePassword }) {
                         <div className="col-md-4">
                             {
                                 !seen &&
-                                <button className="btn btn-info" style={{ backgroundColor: "#3CAEA3" }} onClick={e => setSeen(true)}><i className="fas fa-eye"></i></button>
+                                <button 
+                                className="btn btn-info" 
+                                style={{ backgroundColor: "#3CAEA3" }} 
+                                onClick={e => setSeen(true)}
+                                data-testid="toSeen"
+                                ><i className="fas fa-eye"></i></button>
                             }
                             {
                                 seen &&
-                                <button className="btn btn-info" style={{ backgroundColor: "#3CAEA3" }} onClick={e => setSeen(false)}><i className="fas fa-eye-slash"></i></button>
+                                <button 
+                                className="btn btn-info" 
+                                style={{ backgroundColor: "#3CAEA3" }} 
+                                onClick={e => setSeen(false)}
+                                data-testid="toUnseen"
+                                ><i className="fas fa-eye-slash"></i></button>
                             }
                         </div>
                         <div className="col-md-4">
-                            <button className="btn" style={{ backgroundColor: "#F6D55C" }} onClick={e => viewPassword(e, password._id)}><i className="far fa-edit"></i></button>
+                            <button 
+                            className="btn" 
+                            style={{ backgroundColor: "#F6D55C" }} 
+                            onClick={e => viewPassword(e, password._id)}
+                            data-testid="toEdit"
+                            ><i className="far fa-edit"></i></button>
                         </div>
                         <div className="col-md-4">
-                            <button className="btn btn-danger border-0" style={{ backgroundColor: "#ED553B" }} onClick={e => deletePassword(e, password._id)}><i className="fas fa-trash-alt"></i></button>
+                            <button 
+                            className="btn btn-danger border-0"
+                             style={{ backgroundColor: "#ED553B" }} 
+                             onClick={e => deletePassword(e, password._id)}
+                             data-testid="toDelete"
+                             ><i className="fas fa-trash-alt"></i></button>
                         </div>
                     </div>
                 </div>

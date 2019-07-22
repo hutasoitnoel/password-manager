@@ -18,7 +18,7 @@ const mapDispatchToProps = {
     actionDelete
 }
 
-function Table(props) {
+function List(props) {
     const viewPassword = (e, passwordId) => {
         e.preventDefault()
         props.actionView(passwordId)
@@ -31,7 +31,7 @@ function Table(props) {
 
     return (
         <>
-            <div className="container-fluid">
+            <div className="container-fluid"  data-testid="list-password">
                 <div className="row d-flex justify-content-start flex-wrap">
                     {
                         props.passwords.map((password, index) => {
@@ -41,7 +41,8 @@ function Table(props) {
                                     viewPassword={viewPassword}
                                     deletePassword={deletePassword}
                                     password={password}
-                                    index={index} />
+                                    index={index} 
+                                    />
                             )
                         })
                     }
@@ -51,4 +52,4 @@ function Table(props) {
     )
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Table)
+export default connect(mapStateToProps, mapDispatchToProps)(List)
